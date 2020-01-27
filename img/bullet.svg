@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" color-rendering="auto" color-interpolation="auto" text-rendering="auto" stroke="black" stroke-linecap="square" stroke-miterlimit="10" shape-rendering="auto" stroke-opacity="1" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" xmlns="http://www.w3.org/2000/svg" font-family="&apos;Dialog&apos;" font-style="normal" stroke-linejoin="miter" font-size="12" stroke-dashoffset="0" image-rendering="auto">
+  <!--Unicode Character 'BULLET' (U+2022)-->
+  <defs id="genericDefs" />
+  <g>
+    <g>
+      <path d="M50.3438 249.3281 Q65.1094 249.3281 75.5859 259.8047 Q86.0625 270.2812 86.0625 285.0469 Q86.0625 299.6719 75.5859 310.0781 Q65.1094 320.4844 50.3438 320.4844 Q35.7188 320.4844 25.1719 310.0781 Q14.625 299.6719 14.625 285.0469 Q14.625 270.2812 25.1719 259.8047 Q35.7188 249.3281 50.3438 249.3281 Z" stroke="none" />
+    </g>
+  </g>
+</svg>

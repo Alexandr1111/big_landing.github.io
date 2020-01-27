@@ -1,0 +1,91 @@
+@import url(main.less);
+
+.section-project{
+	background: url(../img/block-2-bg.svg) no-repeat 50% 0%; 
+	background-size: cover;
+	flex-direction: row;
+	position: relative;
+	&-text{
+		flex-basis: 55%;
+		margin-right: 35px;
+		&__header{
+			h2{
+				font-size: 2.2em;
+			}
+		}
+		&__content{
+			font-size: 1.2em;
+			.project{
+				.btn(@dark-orange);
+			}
+		}
+	}
+	&-img{
+		flex-basis: 45%;
+		position: relative;
+		.img-cont{
+			position: absolute;
+			top: 45px;
+			padding-left: 10%;
+			height: 310px;
+			max-height: 310px;
+			img{
+				max-width: 120%;
+				max-height: inherit;
+			}
+		}
+	}
+	&-string{
+		background: white;
+		border: 1px solid red;
+		width: inherit;
+		height: 41px;
+		position: absolute;
+		top: 60%;
+		z-index: 1;
+		opacity: 0.9;
+		display: flex;
+		align-items: center;
+		.string-left{
+			flex: 1;
+		}
+		.string-right{
+			flex-shrink: 1;
+		}
+		&:hover{
+			background: lighten(@dark-orange, 43%);
+		}
+		& div:nth-child(2):before{
+			content: url(../img/online.svg);
+			margin-right: 25px;
+			max-width: 5px;
+			position: relative;
+			right: 40px;
+			top: 0;
+			height: 5px;
+		}
+	}
+	.section-inner{
+		display: flex;
+	}
+} 
+
+@media screen and(max-width: 1000px) {
+	.section-project-img{
+	.img-cont{
+		top: 23%;
+		}	
+	}		
+}
+@media screen and(max-width: 800px) {
+.section-project-img{
+	.img-cont{
+		top: 40%;
+		right: 35px;
+		padding-left: 0;
+		img{
+			max-width: 130%;
+		}
+		}	
+	}	
+}

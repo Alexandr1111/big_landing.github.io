@@ -1,0 +1,47 @@
+@import url(main.less);
+
+.section-footer{
+	box-sizing: border-box;
+	padding-bottom: 5px;
+	padding-top: 30px;
+	background: url('../img/footer-bg.jpg') no-repeat;
+	background-size: cover;
+	position: relative;
+
+.section-inner{
+	z-index: 10;
+	position: relative;
+}
+	&::before{
+		content:'';
+		position: absolute;
+		z-index: 5;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background-color: rgba(36, 36, 39, .9);
+	}
+	.section-footer__main-item:nth-child(3){
+			flex-basis: 40%;
+		}
+	&__main{
+		display: flex;
+		justify-content: center;
+		
+		&-item{
+			display: flex;
+			flex-direction: column;
+
+			a{
+				text-decoration: none;
+				color: #ffffff;
+				margin-bottom: 1.16em;
+			}
+
+		}
+		&-item + &-item{
+				margin-left: 50px;
+			}
+	}
+}

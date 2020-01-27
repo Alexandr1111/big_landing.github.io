@@ -1,0 +1,44 @@
+@orange: orange;
+@dark-orange: #EE7D21;
+@special-black: #353535;
+
+.section-question_and_answer{
+ font-family: 'Roboto', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.section-outer{
+	padding-right: 12.5%;
+	padding-left: 12%;
+} 
+
+.btn(@background){
+	border-radius: 40px;
+	background: @background;
+	color: #FFF;
+	padding: 8px 20px;
+	&:hover{
+		background: #fff;
+		color: @dark-orange;
+		border: 1px solid @dark-orange;
+	}
+}
+.text-style-and-size(@font-size, @font-weight, @color){
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: @font-weight;
+	font-size: @font-size;
+	color: @color;
+}
+.accent-light{
+	color: @orange;
+}
+.accent-dark{
+	color: @dark-orange;
+}
+ul,li{
+	list-style-type: circle;
+	color: @dark-orange;
+}
+li span{
+	color: black !important;
+}

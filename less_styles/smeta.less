@@ -1,0 +1,45 @@
+@import url(main.less);
+
+.section-smeta{
+	color: #353535;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background: url(../img/smeta-bg.png) no-repeat;
+	background-size: 100% 100%;
+
+	.section-inner{
+		display: flex;
+
+		.smeta-left{
+			flex-basis: 50%;
+
+			&__title{
+				font-weight: bold;
+				font-size: 40px;
+				line-height: 50px;
+				margin-bottom: 25px;
+			}
+
+				&__subtitle{
+					font-size: 22px;
+					line-height: 32px;
+					margin-bottom: 30px;
+			}
+
+				&__button{
+					.smeta-btn{
+						.btn(@dark-orange);
+			}
+				}
+	}
+		.smeta-right{
+			flex-basis: 50%;
+			padding-left: 35px;
+
+			img{
+				max-width: 100%;
+			}
+		}
+	
+	}
+}
