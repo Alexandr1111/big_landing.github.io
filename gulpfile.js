@@ -7,7 +7,7 @@ var browser_sync=require('browser-sync').create();
 
 
 function min_css_from_less(done){
-gulp.src('./less_styles/**/*')	//Что берем(все папки и файлы в папке less_styles)
+gulp.src('./less_styles/**/block-3.less')	//Что берем(все папки и файлы в папке less_styles)
 	.pipe(less({
 		errorLogToConsole: true
 	}))
@@ -40,7 +40,6 @@ function watch_files(done){
 gulp.watch("./less_styles/**/*", min_css_from_less); //Взять все папки и все файлы
 gulp.watch("./**/*.html", browser_reload);
 //gulp.watch("./**/*.js", browser_reload);
-gulp.watch('./less_styles/**/*', min_css_from_less);
 done();	
 }
 
