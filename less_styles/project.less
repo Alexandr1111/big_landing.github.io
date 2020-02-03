@@ -3,26 +3,32 @@
 .section-project{
 	background: url(../img/block-2-bg.svg) no-repeat 50% 0%; 
 	background-size: cover;
-	flex-direction: row;
 	position: relative;
-	&-text{
+	padding-bottom: 40px;
+	padding-top: 40px;
+	color: @special-black;
+	position: relative;
+
+	&__text{
 		flex-basis: 55%;
 		margin-right: 35px;
-		&__header{
+
+		.section-header{
 			h2{
 				font-size: 2.2em;
 			}
 		}
-		&__content{
+		.section-content{
 			font-size: 1.2em;
 			.project{
 				.btn(@dark-orange);
 			}
 		}
 	}
-	&-img{
+	&__img{
 		flex-basis: 45%;
 		position: relative;
+
 		.img-cont{
 			position: absolute;
 			top: 45px;
@@ -35,27 +41,47 @@
 			}
 		}
 	}
-	&-string{
+	&__string{
 		background: white;
-		border: 1px solid red;
-		width: inherit;
-		height: 41px;
+		width: 100%;
+		height: 45px;
 		position: absolute;
 		top: 60%;
+		left: 0;
+		right: 0;
 		z-index: 1;
-		opacity: 0.9;
+		opacity: 0.8;
 		display: flex;
 		align-items: center;
 		.string-left{
-			flex: 1;
+			flex-grow: 1;
+		}
+		.string-right,
+		.string-right2{
+			display: flex;
+			position: relative;
+
+			img{
+				max-width: 20%;
+				margin-right: 10px;
+			}
+
+			& span{
+				margin-top: 8px;
+				margin-bottom: 8px;
+				white-space: nowrap;
+			}
 		}
 		.string-right{
-			flex-shrink: 1;
+			right: 10%;
+		}
+		.string-right2{
+			right: 4%;
 		}
 		&:hover{
 			background: lighten(@dark-orange, 43%);
 		}
-		& div:nth-child(2):before{
+		/* & div:nth-child(2):before{
 			content: url(../img/online.svg);
 			margin-right: 25px;
 			max-width: 5px;
@@ -63,7 +89,7 @@
 			right: 40px;
 			top: 0;
 			height: 5px;
-		}
+		} */
 	}
 	.section-inner{
 		display: flex;

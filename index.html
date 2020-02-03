@@ -42,92 +42,97 @@
 		</nav>	
 	</header>
 <main>
-	<div class="container-fluid company-block company-block--one">
-		<div class="row">
-		<div class="container container-left ml-md-4 pt-5 col-xs-12 col-sm-8 col-md-7 col-lg-8">
-			<h1 class="h1 text-light font-weight-bold">Ремонт квартир под ключ<br> в Москве и Московской области<br> <span class="accent-dark">от 100 р/м<sup>2</sup> за 45 дней</span>
+
+<!-- section-one -->
+<section class="container-fluid section-outer section-one">
+	<input type="image" class="calculator-btn" src="img/block-1-calc.png">
+	<input type="image" class="call-btn" src="img/block-1-call.png">
+	<div class="section-one__left">
+			<h1 class="title">
+				Ремонт квартир под ключ в Москве и Московской области <span class="accent-dark">от 100 ₽/м<sup>2</sup> за 45 дней</span>
 			</h1>
-			<p class="text-light font-weight-normal mt-4 mt-sm-2 mt-xl-2 mb-4">Строительная компания "БлагоДать" создаёт гармоничное жилое пространство, превращая обычные квартиры в удобные и привлекательные интерьеры с выразительной эстетикой.</p>
-			<form role="form" class="company-block--one__form row">
-				<input type="text" class="m-2" name="name" placeholder="Имя">
-				<input type="tel" class="m-2" name="tel" placeholder="Телефон">
-				<input type="submit" class="m-2 btn btn-md btn-block" name="send_data" value="Оставить заявку">
-				<div class="form-group checkbox-group">
-					<input type="checkbox" name="is-client-agree" id="is-client-agree">	<label for="is-client-agree"><p class="text-light is-client-agree mt-5">Настоящим подтверждаю что я ознакомлен и согласен с политикой<br> конфиденциальности, а также даю согласие на обработку своих<br> персональных данных.</p></label>
-				</div>
-
-			</form>	
-			<p class="doverie text-light mt-3 mt-lg-0">Оставляйте заявку и мы оправдаем<br> ваше доверие на 100%.</p>
-		</div> end of left container
-		<!-- <div class="container container-right mt-4 mr-lg-5 p-4 col-5 col-sm-4 col-md-4 col-lg-3">
-			<form action="#" class="company-block--one__form2">
-				<h2>Рассчитать стоимость ремонта онлайн</h2>
-				<p class="step my-3">Шаг 1 из 5</p>
-				<h4 class="mb-3">Выберите тип вашего дома</h4>
+			<p class="subtitle">
+				Строительная компания "БлагоДать" создаёт гармоничное жилое пространство, превращая обычные квартиры в удобные и привлекательные интерьеры с выразительной эстетикой.
+			</p>
+			<form role="form" class="row">
+				<input type="text" name="name" placeholder="Имя">
+				<input type="tel" name="tel" placeholder="Телефон">
+				<input type="submit" class="btn" name="send_data" value="Оставить заявку">
 				<div class="form-group">
-					<input type="radio" name="house-type" class="my-2 mr-2" id="novo" value="Новостройка">
-					<label for="novo">Новостройка</label><br>
-					<input type="radio" name="house-type" class="my-2 mr-2" id="secondary_house" value="Вторичное_жилье">
-					<label for="secondary_house">Вторичное жилье</label><br>
-					<input type="radio" name="house-type" class="my-2 mr-2" id="village" value="Загородный_дом"><label for="village">Загородный дом</label>
+					<input type="checkbox" checked name="is-client-agree" id="is-client-agree">
+					<label for="is-client-agree">
+							Настоящим подтверждаю что я ознакомлен и согласен с политикой конфиденциальности, а также даю согласие на обработку своих персональных данных.
+					</label>
 				</div>
-				<input type="button" class="btn btn-block my-5" value="Далее">
-				<hr class="company-block--one__dashed-line">
+				<p class="doverie">
+					Оставляйте заявку и мы оправдаем ваше доверие на 100%.
+				</p>
 			</form>
-		</div> -->
-		</div>
- 	</div>
+	</div>
 
-	<section class="container-fluid section-outer section-project">
-	<!-- <div class="section-project-string px-5 py-1">
-				<div class="string-left"><span class="accent-dark">Оставьте заявку</span> или позвоните <span class="accent-dark">+7(499) 588-92-78</span></div>
-				<div class="string-right"><span class="accent-dark">Чат с консультантом</span></div>
-				<div class="string-right"><span class="accent-dark">Калькулятор ремонта</span></div>
-		</div> -->	
-	<div class="section-inner p-4">
-		<div class="section-project-text">
-			<div class="section-project-text__header">
-				<h2 class="mt-3 mb-2 ml-3 font-weight-bold"><span class="accent-dark">Бесплатно</span> дизайн-проект</h2>
+	<div class="container section-one__right">
+		<form action="#">
+			<h2 class="form-title">Рассчитать стоимость ремонта онлайн</h2>
+			<p class="step">Шаг 1 из 5</p>
+			<h4 class="house-type">Выберите тип вашего дома</h4>
+			<div class="form-group">
+				<input type="radio" name="house-type" id="novo" value="Новостройка">
+				<label for="novo">Новостройка</label><br>
+				<input type="radio" name="house-type" id="secondary_house" value="Вторичное_жилье">
+				<label for="secondary_house">Вторичное жилье</label><br>
+				<input type="radio" name="house-type" id="village" value="Загородный_дом">
+				<label for="village">Загородный дом</label><br>
 			</div>
-			<div class="section-project-text__content">
-				<p class="my-5 ml-3">При заказе дизайн-проекта и строительных работ - стоимость дизайн-проекта вычитается из стоимости строительных работ.</p>
-				<button class="btn project ml-3 mb-4">Получить дизайн-проект бесплатно</button>
+			<input type="button" class="btn btn-block" value="Далее">
+			<p class="form-footer">
+				Рассчитайте стоимость ремонта  и получите в подарок скидку  на отделочные работы
+			</p>
+		</form>
+	</div>
+ </section>
+ <!-- / section-one -->
+
+<!-- section-project -->
+<section class="container-fluid section-outer section-project">
+	<div class="section-project__string px-5 py-1">
+				<div class="string-left"><span class="accent-dark">Оставьте заявку</span> или позвоните <span class="accent-dark">+7(499) 588-92-78</span></div>
+				<div class="string-right"><img src="img/online.svg" alt=""><span class="accent-dark">Чат с консультантом</span></div>
+				<div class="string-right2"><img src="img/project-calc.svg" alt=""><span class="accent-dark">Калькулятор ремонта</span></div>
+	</div> 
+	<div class="section-inner">
+		<div class="section-project__text">
+			<div class="section-header">
+				<h2 class="mt-3 mb-1 font-weight-bold"><span class="accent-dark">Бесплатно</span> дизайн-проект</h2>
+			</div>
+			<div class="section-content">
+				<p class="my-5">При заказе дизайн-проекта и строительных работ - стоимость дизайн-проекта вычитается из стоимости строительных работ.</p>
+				<button class="btn project mb-4">Получить дизайн-проект бесплатно</button>
 			</div>
 		</div>
-		<div class="section-project-img">
+		<div class="section-project__img">
 			<div class="img-cont">
 				<img src="img/block-2.svg" alt="">
 			</div>
 		</div>
 	</div>
 </section>
-
-
-<!-- <div class="container-fluid company-block company-block--two">
-	<div class="company-block--two__bg">
-		<div class="company-block--two__main pl-5">
-			<h2 class="mt-5 font-weight-bold"><span class="accent-dark">Бесплатно</span> дизайн-проект</h2>
-			<p class="my-5">При заказе дизайн-проекта и строительных работ - стоимость дизайн-проекта вычитается из стоимости строительных работ.</p>
-			<button class="btn project">Получить дизайн-проект бесплатно</button>
-		</div>
-	</div>	
-</div> -->
+<!-- / section-project -->
 
 <!-- section-three -->
-<div class="container-fluid company-block company-block--three">
-	<div class="company-block--three__header mb-5 pl-5 pb-4 pt-5">
+<div class="container-fluid section-outer section-three">
+	<div class="section-three__header mb-5 pb-4 pt-5">
 		<h2 class="font-weight-bold mb-3">Наши услуги и цены</h2>
 		<p class="mb-2">Ремонт квартир, частных домов, офисов, торговых помещений-всё это вы сможете заказать у нас. Мы выполняем ремонт под ключ с материалами по доступной цене.</p>
 		<p><span class="accent-dark">СК БлагоДать осуществляет любые виды работ:</span></p>
 	</div>
 	<div class="slider-and-desc mr-5">
-	<div class="company-block--three__slider">
+	<div class="section-three__slider">
       <div class="slide slide1"></div>
       <div class="slide slide2"></div>
       <div class="slide slide3"></div>
       <div class="slide slide4"></div>
  		</div>
-	<div class="company-block--three__description py-4 pl-3 pr-5">
+	<div class="section-three__description py-4 pl-3 pr-4">
 		<h2 class="font-weight-bold mb-3">Капитальный ремонт</h2>
 		<p class="mb-2"><span class="text-grey">от</span> <span class="accent-dark font-weight-bold cost">6 650 Р/м<sup>2</sup></span></p>
 		<p class="services mb-3">Включает следующие услуги:
@@ -140,7 +145,7 @@
 		<button class="btn btn-block smeta mt-3">Получить смету бесплатно</button>
 	</div>
 	</div>
-	<div class="company-block--three__repairs mt-2">
+	<div class="section-three__repairs mt-2">
 		<ul>
 			<li>Капитальный ремонт</li>
 			<li>Косметический ремонт</li>
