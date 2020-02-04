@@ -81,15 +81,6 @@
 		&:hover{
 			background: lighten(@dark-orange, 43%);
 		}
-		/* & div:nth-child(2):before{
-			content: url(../img/online.svg);
-			margin-right: 25px;
-			max-width: 5px;
-			position: relative;
-			right: 40px;
-			top: 0;
-			height: 5px;
-		} */
 	}
 	.section-inner{
 		display: flex;
@@ -104,6 +95,29 @@
 	}		
 }
 @media screen and(max-width: 800px) {
+.section-content{
+	p{
+		text-align: center;
+	}
+	.project{
+		display: block;
+		margin: 0 auto 24px;
+	}
+}	
+.section-project__string{
+	display: none;
+}	
+.section-project__img{
+	display: none;
+}
+.section-project__text{
+	h2{
+		text-align: center;
+	}
+
+	flex-basis: 100%;
+	margin-right: 0;
+}
 .section-project-img{
 	.img-cont{
 		top: 40%;

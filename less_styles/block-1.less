@@ -5,13 +5,14 @@
 	background-size: 110% 100%;
 	min-height: 660px;
 	display: flex;
+	flex-wrap: wrap;
 	position: relative;
 
 	.calculator-btn{
 		position: absolute;
 		right: 0;
 		overflow: hidden;
-		top: 18%;
+		top: 17%;
 		width: 45px;
 
 		&:hover{
@@ -23,7 +24,7 @@
 	.call-btn{
 		position: absolute;
 		right: 0;
-		top: 28%;
+		top: 26%;
 		width: 46px;
 
 		&:hover{
@@ -36,7 +37,7 @@
 		padding-top: 111px;
 		padding-bottom: 75px;
 		color: #ffffff;
-		flex-basis: 60%;
+		flex-basis: 40%;
 
 		.title{
 			font-weight: bold;
@@ -126,7 +127,7 @@
 					position: absolute;
 					left: 0;
 					right: 0;
-					bottom: 20%;
+					bottom: 17%;
 					overflow: hidden;
 					white-space: nowrap;
 					opacity: 0.25;
@@ -207,326 +208,147 @@
 		}
 	}
 
-/* .section-one__right{
-	background: #FFF;
-	border-radius: 15px;
-	width: 382px;
-	height: 538px;
-	h2{
-		.text-style-and-size(2vw, 800, black);  //Рассчитать стоимость ремонта онлайн
-		text-align: center;
-	}
-	.step{
-		.text-style-and-size(1.3vw, 500, #C1C1C1);
-		text-align: center; 
-	}
-	h4{
-		.text-style-and-size(1.7vw, 500, black);  //Тип дома
-		text-align: center;
-	}
-	input[type=radio]{
-		cursor: pointer;
-		text-align: center;
-	}
-	label{
-		text-align: center;
-		cursor: pointer;
-	}
-	input[type=button]{
-		.btn(@dark-orange);
-		cursor: pointer;
-		width: 75%;
-		margin-right: auto;
-		margin-left: auto;
-	}
-	.form-group{
-		margin-left: 21%;
-	}
-} */
-}
-.section-one__form{
-	input[type=text],[type=tel]{
-		.btn(white);
-	}
-	input[type=submit]{
-		.btn(@dark-orange);
-		width: 220px;
-	}
-	.is-client-agree{
-		font-size: 0.7vw;
-	}
 
-	.form-group{
-		display: flex;
-		align-items: center;	
-			input[type=checkbox]{
-				margin-right: 14px;
-			}
-	}
-}
+@media(max-width: @sm-max){
 
-/*
+	&__left{
+		flex-basis: 100%;
+		padding-bottom: 35px;
 
-		h2{
-		.text-style-and-size(40px, bold, white);
-		line-height: 50px;
-		margin-top: 111px;
-	}
-		& :nth-child(2){    //Строительная создает гармоничное..
-		.text-style-and-size(18px, normal, white);
-		line-height: 28px;
-	}
-	.doverie{
-		.text-style-and-size(15px, normal, white);
-		line-height: 20px;
-		margin-top: -16px;
-	}
-	.dashed-line{
-		position: absolute;
-		top: 455px;
-		left: 355px;
-		transform: rotate(-3deg);
-	}
-	.polygon{
-		position: absolute;
-		top: 440px;
-		left: 625px;
-	}
-}
-.section-one__form{
-	input[type=text],[type=tel]{
-		.btn(white);
-		margin-right: 11px;
-	}
-	input[type=submit]{
-		.btn(@dark-orange);
-		cursor: pointer;
-		width: 205px;
-	}
-	label{
-		.text-style-and-size(12px, normal, white);
-		line-height: 16px;
-		p{
-			position: relative;
-			left: 25px;
-			top: -35px;
-		}
-	}
-}
-*/
-
-/*
-.section-one__form2{
-	background: #FFF;
-	border-radius: 15px;
-	width: 382px;
-	height: 538px;
-	position: absolute;
-	left: 835px;
-	top: 61px;
-	.text-style-and-size(16px, normal, #353535);
-	h2{
-		.text-style-and-size(28px, 500, black);  //Рассчитать стоимость ремонта онлайн
-		text-align: center;
-	}
-	.step{
-		.text-style-and-size(16px, 500, #C1C1C1);
-		text-align: center; 
-	}
-	h4{
-		.text-style-and-size(18px, 500, black);  //Тип дома
-		text-align: center;
-	}
-	input[type=radio]{
-		cursor: pointer;
-		text-align: center;
-	}
-	label{
-		text-align: center;
-	}
-	input[type=button]{
-		.btn(@dark-orange);
-		cursor: pointer;
-	}
-	.sale{
-		.text-style-and-size(15px, normal, #353535);
-		width: 235px;
-		height: 60px;
-	}
-	.sale-value{
-		color: @dark-orange;
-		font-size: 34px;
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: bold;
-	}
-
-}*/
-/* @media screen and(max-width: 576px) { //xs
-	.section-one{
-	height: 960px;
-	
-	.section-one__right{
-	background: #FFF;
-	border-radius: 15px;
-	width: 430px !important;
-	height: 400px;
-	h2{
-		.text-style-and-size(2.8vw, 800, black) !important;  //Рассчитать стоимость ремонта онлайн
-		text-align: center;
-	}
-	.step{
-		.text-style-and-size(2vw, 500, #C1C1C1);
-		text-align: center; 
-	}
-	h4{
-		.text-style-and-size(2.5vw, 500, black) !important;  //Тип дома
-		text-align: center;
-	}
-	input[type=radio]{
-		cursor: pointer;
-		text-align: center;
-	}
-	label{
-		text-align: center;
-		cursor: pointer;
-	}
-	input[type=button]{
-		.btn(@dark-orange);
-		cursor: pointer;
-		width: 70%;
-		margin-right: auto;
-		margin-left: auto;
-		margin-top: 5% !important;
-		&:hover{
-			color: black;
-		}
-	}
-	.form-group{
-		margin-left: 21%;
-	}
-}
-}
-}
-@media screen and(max-width: 600px) {
-	.section-one{
-		background-position: 50% 50%;
-		background-size: 155% 100%;
-		background-repeat: no-repeat;
-	}
-}
-@media screen and(max-width: 658px) {
-	.section-one__right{
-		h2{
-		.text-style-and-size(2.2vw, 800, black) !important;  //Рассчитать стоимость ремонта онлайн
-		text-align: center;
-	}
-		h4{
-		.text-style-and-size(2.1vw, 500, black) !important;  //Тип дома
-		text-align: center;
-		}
-		label{
+		.title,
+		.subtitle{
 			text-align: center;
-			cursor: pointer;
-			font-size: 2vw;
+		}
+
+		.subtitle{
+			width: 100%;
+		}
+
+		form{
+
+			input[type="text"],
+			input[type="tel"],
+			input[type="submit"]{
+				padding: 7px 15px;
+				margin: 0 auto 22px;
+				text-align: center;
+			}
+
+			.form-group{
+				width: 100%;
+			}
+
+			.doverie{
+				display: none;
+			}
 		}
 	}
-}
-@media screen and(max-width: 820px) {
-	.section-one__right{
-	background: white;
-	border-radius: 15px;
-	width: 382px;
-	height: 538px;
-	h2{
-		.text-style-and-size(2vw, 800, black);  //Рассчитать стоимость ремонта онлайн
-		text-align: center;
-	}
-	.step{
-		.text-style-and-size(1.3vw, 500, #C1C1C1);
-		text-align: center; 
-	}
-	h4{
-		.text-style-and-size(1.7vw, 500, black);  //Тип дома
-		text-align: center;
-	}
-	input[type=radio]{
-		cursor: pointer;
-		text-align: center;
-	}
-	label{
-		text-align: center;
-		cursor: pointer;
-	}
-	input[type=button]{
-		.btn(@dark-orange);
-		cursor: pointer;
-		width: 75%;
-		margin-right: auto;
-		margin-left: auto;
-		&:hover{
-			color: black;
+
+	&__right{
+		flex-basis: 92%;
+		padding-left: 0;
+
+		form{
+			padding: 13px 20px;
+
+			.form-group{
+				padding-right: 0px;
+				padding-left: 50px;
+				width: 78%;
+			}
 		}
-	}
-	.form-group{
-		margin-left: 14% !important;
-	}
-}
-}
-@media screen and(min-width: 280px) and (max-width: 599px){
-	.section-one__left{
-		h1{
-			font-size: 5.4vw;
-		}
-		p{
-			font-size: 3.6vw;
-		}
-		.is-client-agree{
-			font-size: 2.1vw;
-			margin-top: 10px !important;
-		}
-		.doverie{
-			font-size: 3.2vw;
-		}
-	}
-}
-@media screen and(min-width: 600px) and (max-width: 1199px){
-	.section-one__left{
-		.is-client-agree{
-			font-size: 1.5vw;
-			margin-top: 10px !important;
-		}
-	}
-}
-@media screen and(min-width: 1200px) and (max-width: 2200px){
-	.section-one__left{
-		.is-client-agree{
-			font-size: 1.3vw;
-			margin-top: 10px !important;
-		}	
 	}
 }	
 
-@media screen and(min-width: 1500px){
-	.section-one__form{
-	input[type=text],[type=tel]{
-		.btn(white);
-		width: 320px;
-	}
-	}
-	input[type=submit]{
-		.btn(@dark-orange);
-		font-size: 25px;
-	}
-}
-@media screen and(min-width: 1790px){
-	.section-one__left{
-	h1{
-		font-size: 3vw;
-	}
-	p{
-		font-size: 2vw;
+@media(min-width: 565px) and (max-width: @sm-max){
+	&__right{
+		form{
+			.form-group{
+				padding-left: 90px;
+			}
+		}
 	}
 }
 
-} */
+@media(min-width: @md){
+	&__left{
+		flex-basis: 50%;
+	form{
+		display: flex;
+		flex-direction: column;
+
+			input[type="text"],
+			input[type="tel"],
+			input[type="submit"]{
+				padding: 10px 15px;
+				margin: 0 auto 30px;
+				text-align: center;
+			}
+
+			.form-group{
+				width: 100%;
+			}
+
+			.doverie{
+				display: none;
+			}
+		}	
+	}
+
+	&__right{
+		flex-basis: 50%;
+		margin-right: 0;
+		margin-left: 0;
+		align-items: center;
+		justify-content: center;
+		padding-left: 3%;
+		padding-right: 0;
+
+		form{
+			margin: 0 auto;
+			padding: 13px 20px;
+
+			.form-group{
+				padding-right: 0px;
+				width: 62%;
+
+				label{
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: @xl){
+	&__left{
+		//flex-basis: 50%;
+	form{
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		}
+	}	
+	&__right{
+		flex-basis: 42%;
+		padding-left: 10%;
+
+		form{
+			.form-group{
+			
+			}
+		}
+		}
+	}
+
+	@media(min-width: 1305px){
+		&__right{
+		form{
+			.form-group{
+				padding-left: 52px;
+				width: 85%;
+			}
+		}
+		}
+	}
+}
