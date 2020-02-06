@@ -24,12 +24,13 @@
 	}
 	&__slider{
 		display: inline-block;
-		width: 400px;//any width will be ok
+		width: 480px;//any width will be ok
 		position: relative;
 		top: 0;
 		height: 310px;
 		margin: auto;
 		overflow: hidden;
+
 		@keyframes slide {
  from {
   top: 0;
@@ -77,7 +78,7 @@
 }
 
 		.slide {
-			width: 400px;
+			width: 480px;
 			height: 310px;
 			position: absolute;
 			top: 0;
@@ -124,7 +125,7 @@
 		width: max-content;
 		display: inline-block;
 		position: absolute;
-		right: 15%;
+		right: 12%;
 
 		li{
 			list-style-type: none;
@@ -147,98 +148,112 @@
 		}
 	}
 }	
-/* @media screen and(max-width: 500px){
+@media screen and(max-width: @xs-max){
 	.section-three{
-	background: #E5E5E5;
-	position: relative;
-	height: 795px;
-	&__header{
-		width: 100%;
-		h2{
-			font-size: 5vw !important;
-			text-align: center;
+		min-height: 680px;
+		padding-bottom: 50px;
+
+		&__header{
+			width: 100%;
+			h2{
+				font-size: 5vw !important;
+				text-align: center;
+			}
+			p{
+				font-size: 3.4vw;
+			}
 		}
-		p{
-			font-size: 3.4vw;
+		&__repairs{
+			margin: 0 auto;
+			display: block;
+			position: static;
 		}
-	}
-	&__repairs{
-		//box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.1);
-		width: max-content;
-		display: inline-block;
-		position: absolute;
-		left: 0.7%;
-		top: 25%;
-		li{
-			list-style-type: none;
-			color: black;
-			cursor: pointer;
-			padding: 9px 30px 9px 18px;
-			font-size: 3.5vw;
-		}
-		li:hover{
-			background: @dark-orange;
-			color: white;
-		}
-		li:nth-child(3):after{
-			content : url('../img/discount2.svg');
-			
-			position: absolute;
-			margin-left: 5%;
-			margin-top: -3.5%; 
-		}
-	}
-	.slider-and-desc{
-		
-	}
-	&__description{
-		width: 93%;
-		height: 115% !important;
-		position: absolute;
-		top: -40px;
-		left: 74%;
-		padding-right: 6px !important;
-		background: none;
-		height: 250px;
-		display: inline-block;
-		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-		h2{
-			font-size: 4vw;
-			text-align: center;
-		}
-		.text-grey{
-			color: #7F7F80;
-			font-size: 2.8vw;
-		}
-		.services{
-			font-size: 3.4vw;
-		}
-		p{
-			text-align: center;
-		}
-		.cost{
-			font-size: 3.7vw;
-			letter-spacing: 1px;
-		}
-		li{
-			margin-left: 15px !important;
-			margin-top: 7px;
-			margin-bottom: 5px !important;
+		.slider-and-desc{
+
+			.section-three__slider{
+				display: block;
+				width: 90vw;
+				margin-bottom: 20px;
+
+				.slide{
+					width: 80vw;
+				}
+			}
+
+			.section-three__description{
+				display: none;
+			}	
 		}
 
-		.smeta{
-			font-size: 3.4vw;
-			width: 95%;
-			margin: 14% auto -7px auto !important;
-			padding: 3px !important;
-			.btn(@dark-orange);
+	}
+}	
+
+@media screen and(min-width: @sm) and (max-width: 1110px){
+	.section-three{
+		min-height: 680px;
+		padding-bottom: 50px;
+
+		&__header{
+			width: 100%;
+			h2{
+				font-size: 5vw !important;
+				text-align: center;
+			}
+			p{
+				font-size: 3.4vw;
+			}
 		}
-  		 	 
+		&__repairs{
+			margin: 0 auto;
+			display: block;
+			position: static;
+		}
+		.slider-and-desc{
+			width: 85%;
+
+			.section-three__slider{
+				//display: block;
+				margin-right: 0;
+				margin-bottom: 20px;
+				width: 42vw;
+
+				.slide{
+					width: 45vw;
+				}
+			}
+
+			.section-three__description{
+				h2{
+					font-size: 20px;
+					line-height: 28px;
+				}
+			}	
+		}
+
 	}
-	&__slider{
-		top: 280px;
-		width: 163%;
-		height: 260px;
+}
+
+@media screen and(min-width: 1111px) and (max-width: 1330px){
+	.section-three{
+		.section-three__slider{
+			margin-right: 0;
+			margin-bottom: 20px;
+			width: 360px;
+
+			.slide{
+				width: 360px;
+			}
+			}
+			&__repairs{
+				//width: max-content;
+				display: inline-block;
+				right: 10%;
+
+			li{
+				padding: 8px 15px 9px 15px;
+				font-size: 16px;
+				line-height: 26px;
+			}
+		}
 	}
-	}
-}	 */
+}
