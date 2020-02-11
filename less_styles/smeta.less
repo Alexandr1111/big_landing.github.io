@@ -9,6 +9,7 @@
 
 	.section-inner{
 		display: flex;
+		flex-wrap: wrap;
 
 		.smeta-left{
 			flex-basis: 50%;
@@ -29,7 +30,8 @@
 				&__button{
 					.smeta-btn{
 						.btn(@dark-orange);
-			}
+						font-size: 23px;
+					}
 				}
 	}
 		.smeta-right{
@@ -40,6 +42,28 @@
 				max-width: 100%;
 			}
 		}
-	
+		@media (max-width: @sm-max){
+			.smeta-left{
+				flex-basis: 100%;
+
+				&__title{
+					text-align: center;
+				}
+
+				&__button{
+					.smeta-btn{
+						display: block;
+						margin: 0 auto;
+						font-size: 20px;
+					}
+				}
+			}
+
+			.smeta-right{
+				order: -1;
+				flex-basis: 100%;
+				margin-bottom: 30px;
+			}
+		}
 	}
 }

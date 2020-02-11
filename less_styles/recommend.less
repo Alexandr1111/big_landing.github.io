@@ -53,29 +53,30 @@
 		flex-wrap: wrap;
 
 		.recommend-left{
-			flex-basis: 45%;
+			flex-basis: 47%;
 
 			.review-body{
 				background: #ffffff;
 				box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 				padding: 30px 35px 15px 25px;
+				height: 100%;
 
 				&__subtitle{
 					font-weight: bold;
-					font-size: 22px;
+					font-size: 24px;
 					line-height: 30px;
 					margin-bottom: 10px;
 				}
 
 				&__text{
-					font-size: 15px;
-					line-height: 25px;
+					font-size: 17px;
+					line-height: 28px;
 					margin-bottom: 52px;
 				}
 
 				&__autor{
 					font-style: italic;
-					font-size: 15px;
+					font-size: 16px;
 					line-height: 25px;
 					display: flex;
 
@@ -96,14 +97,84 @@
 	}//end of recommend left
 
 		.recommend-right{
-			flex-basis: 55%;
+			flex-basis: 53%;
 
 			&__video{
-				
+				height: 100%;
+				width: 100%;
 				img{
 					max-width: 100%;
+					height: 100%;
+					width: inherit;
 				}
 			}
 		}//end of recommend right	
 	}
+		@media (max-width: @md-max){
+			&-header{
+				display: block;
+				margin-bottom: 25px;
+
+				&__title{
+					text-align: center;
+				}
+				&__title2{
+					text-align: center;
+				}
+			}
+			.section-inner{
+			.recommend-left{
+				flex-basis: 100%;
+
+				.review-body{
+
+					&__subtitle{
+						font-size: 25px;
+						margin-bottom: 25px;
+					}
+
+					&__text{
+						font-size: 18px;
+					}
+
+					&__autor{
+						font-size: 17px;
+					}
+				}
+			}
+
+			.recommend-right{
+				flex-basis: 100%;
+
+				&__video{
+					img{
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: 1500px){
+		&-header{
+			&__nav{
+				font-size: 20px;
+			}
+		}
+		.section-inner{
+		.recommend-left{
+		.review-body{
+			&__text{
+					font-size: 20px;
+					line-height: 38px;
+					margin-bottom: 52px;
+				}
+
+			&__autor{
+				font-size: 18px;
+			}	
+		}
+	}
+	}
+}
 }
