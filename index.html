@@ -539,7 +539,7 @@
 </section>	
 <!--/ section-request -->
 
-<!--
+<!-- section-about -->
 <section class="container-fluid section-outer section-about">
 	<div class="section-inner">
 		<div class="section-about__team">
@@ -619,9 +619,9 @@
 		</div>
 	</div>
 </section>	
-/ about
+<!-- / section-about -->
 
-request
+<!-- section-request -->
 <section class="container-fluid section-outer section-request">
 	<div class="section-inner">
 		<div class="section-request__title text-light">
@@ -658,9 +658,9 @@ request
 		</div>
 	</div>
 </section>	
-/ request
+<!-- / section-request -->
 
-question and answer
+<!-- question and answer -->
 <section class="container-fluid section-outer section-question_and_answer">
 	<div class="section-inner">
 		<div class="section-question_and_answer__title">
@@ -672,7 +672,7 @@ question and answer
 					С чего следует начинать ремонт?
 				</div>
 				<div class="answer"></div>
-				<img src="img/Rectangle 8.png" alt="">
+				<img src="img/Rectangle 8.png" id="dropup-arrow" alt="">
 			</div>
 			<div class="block">
 				<div class="question">
@@ -681,35 +681,35 @@ question and answer
 				<div class="answer">
 					Практически любые изменения конфигурации помещения необходимо узаконивать. Например, вы решили самостоятельно демонтировать стену в доме, а она оказалась несущей. По незнанию вы нарушили строительные нормы, что может в дальнейшем повлиять на конструкцию всего дома, от чего будут страдать все соседи. Это повлечет много ненужных проблем. Процедура согласования поможет вам этого избежать.
 				</div>
-				<img src="img/Rectangle 8.1.png" class="active-img" alt="">
+				<img src="img/Rectangle 8.1.png" id="dropup-arrow" class="active-img" alt="">
 			</div>
 			<div class="block">
 				<div class="question">
 					Когда необходимо согласовывать перепланировку?
 				</div>
 				<div class="answer"></div>
-				<img src="img/Rectangle 8.png" alt="">
+				<img src="img/Rectangle 8.png" id="dropup-arrow" alt="">
 			</div>
 			<div class="block">
 				<div class="question">
 					Сколько времени занимает ремонт?
 				</div>
 				<div class="answer"></div>
-				<img src="img/Rectangle 8.png" alt="">
+				<img src="img/Rectangle 8.png" id="dropup-arrow" alt="">
 			</div>
 			<div class="block">
 				<div class="question">
 					Производите ли вы закупку и доставку материалов?
 				</div>
 				<div class="answer"></div>
-				<img src="img/Rectangle 8.png" alt="">
+				<img src="img/Rectangle 8.png" id="dropup-arrow" alt="">
 			</div>
 		</div>
 	</div>
 </section>
-/ question and answer
+<!-- / question and answer -->
 
-contacts
+<!-- contacts -->
 <section class="container-fluid section-outer section-contacts">
 	<div class="section-inner">
 		<div class="section-contacts__content">
@@ -731,9 +731,9 @@ contacts
 
 	</div>
 </section>
-/ contacts
+<!-- / contacts -->
 
-footer
+<!-- footer -->
 <section class="container-fluid section-outer section-footer">
 	<div class="section-inner">
 		<div class="section-footer__main">
@@ -757,8 +757,8 @@ footer
 		</div>
 	</div>	
 </section>	
-/ footer
-
+<!-- / footer -->
+<!--
 <svg class="dashed-line" width="281" height="127" viewBox="0 0 281 127" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M274.5 0.499756C212.991 25.4999 258.5 78.9999 212.991 112.113C197.895 123.097 147.491 117.113 112.99 90.6131C82.4977 63.2302 26.5001 70.9572 4.49805 86.2302" stroke="white" stroke-dasharray="6 3"/>
 		</svg>
@@ -965,5 +965,38 @@ footer
       isAutoplay: true
     });
   </script>
+  <script>
+  	 var arrow_img = document.querySelectorAll('#dropup-arrow');
+  	 var answer = document.querySelectorAll('.answer');
+
+for(let elem of arrow_img){
+
+  	 	elem.onclick = function(){
+  			elem.classList.toggle('dropdown');
+			
+			for(let ans of answer){
+  				show(ans);
+  				hide(ans);
+
+  				function hide(ans) {
+	if (!ans.hasAttribute('displayOld')) {
+		ans.setAttribute("displayOld", ans.style.display)
+	}
+
+	ans.style.display = "none"
+}
+
+function show(ans) {
+	var old = ans.getAttribute("displayOld");
+	ans.style.display = old || "";
+}
+
+  			}
+		};
+	}
+
+  </script>
+
+
 </body>
 </html>

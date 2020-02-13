@@ -49,20 +49,38 @@ position: relative;
 			
 			}
 			.answer{
-				font-size: 15px;
-				line-height: 22px;
+				font-size: 16px;
+				line-height: 23px;
 				color: #121212;
 			}
 			img{
 				position: absolute;
 				right: 3%;
 				top: 50%;
+				transition: 0.4s;
+
+				&:hover{
+					cursor: pointer;
+					width: 27px;
+					height: 15px;
+
+				}
 			}
 			.active-img{
 				position: absolute;
 				right: 3%;
 				top: 20%;
 			}
+
+			.dropdown{
+				transform: scale(-1);
+			}
+		}
+	}
+
+	@media (max-width: @md-max){
+		&__title{
+			text-align: center;
 		}
 	}
 }
