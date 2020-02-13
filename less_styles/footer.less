@@ -24,24 +24,35 @@
 	}
 	.section-footer__main-item:nth-child(3){
 			flex-basis: 40%;
+			flex-grow: 1;
 		}
+
 	&__main{
 		display: flex;
-		justify-content: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
 		
 		&-item{
 			display: flex;
 			flex-direction: column;
+			flex-grow: 1;
+			padding: 10px;
+			text-align: center; 
 
 			a{
 				text-decoration: none;
 				color: #ffffff;
 				margin-bottom: 1.16em;
+				font-size: 19px;
 			}
-
+			
+			&--img{
+				img{
+					display: block;
+					max-width: 100%;
+					min-width: 165px;
+				}
+			}
 		}
-		&-item + &-item{
-				margin-left: 50px;
-			}
 	}
 }
