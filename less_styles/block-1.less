@@ -127,11 +127,11 @@
 					position: absolute;
 					left: 0;
 					right: 0;
-					bottom: 17%;
+					bottom: 16%;
 					overflow: hidden;
 					white-space: nowrap;
 					opacity: 0.25;
-				}
+				}	
 
 			.form-title{
 				font-weight: bold;
@@ -158,6 +158,154 @@
 				text-align: center;
 			}
 
+			.hidden-form{
+				display: none;
+				margin-bottom: 60px;
+				flex-direction: column;
+
+				span{
+					border-bottom: 2px solid @dark-orange;
+				}
+				
+				&__square{
+					display: grid;
+					margin-bottom: 20px;
+					grid-template-areas: "div input";
+					grid-auto-columns: 50%;
+
+					div{
+						grid-area: div;
+					}
+					input{
+						grid-area: input;
+						outline: none;
+						border: none;
+						border-bottom: 1px solid grey;
+						width: 65%;
+						position: relative;
+
+						&::placeholder{
+							text-align: right;
+							padding-right: 10px;
+							position: relative;
+
+							&:hover{
+								position: absolute;
+								bottom: 70px;
+							}
+						}
+					}
+				}
+
+				&__rooms{
+					display: grid;
+					margin-bottom: 20px;
+					grid-template-areas: "div rooms";
+					grid-auto-columns: 50%;
+
+					div{
+						grid-area: div;
+					}
+
+					.rooms-num{
+						grid-area: rooms;
+						display: flex;
+						justify-content: space-between;
+						width: 75%;
+
+						&__item{
+							cursor: pointer;
+							color: @text-disadbled;
+
+							&:hover{
+								color: @dark-orange;
+							}						
+						}
+					}
+				}
+
+				&__height{
+					display: grid;
+					grid-template-areas: "div roof";
+					grid-auto-columns: 50%;
+
+					div{
+						grid-area: div;
+						padding-right: 7px;
+					}
+
+					.roof-height{
+						grid-area: roof;
+						display: flex;
+						justify-content: space-between;
+						width: 90%;
+
+						&__item{
+							cursor: pointer;
+							color: @text-disadbled;
+
+							&:hover{
+								color: @dark-orange;
+							}						
+						}
+					}
+				}
+			}
+
+			.hidden-result{
+				display: none;
+				flex-direction: column;
+				margin-bottom: 30px;
+
+				.work-price{
+					display: grid;
+					grid-template-areas: "text price";
+					grid-auto-columns: 50%;
+					margin-bottom: 20px;
+
+					&__text{
+						grid-area: text;
+					}
+					&__price{
+						grid-area: price;
+						text-align: right;
+						font-weight: bold;
+						padding-right: 10px;
+					}
+				}
+
+				.black-material-price{
+					display: grid;
+					grid-template-areas: "text price";
+					margin-bottom: 35px;
+
+					&__text{
+						grid-area: text;
+						padding-right: 8px;
+					}
+					&__price{
+						grid-area: price;
+						text-align: right;
+						font-weight: bold;
+						padding-right: 10px;
+					}
+				}
+
+				&__total{
+					font-weight: bold;
+					text-align: center;
+
+					p{
+						margin-bottom: 15px;
+						font-size: 15px;
+					}
+
+					div{
+						font-size: 40px;
+					}
+				}
+			}
+
 			.form-group{
 				padding-right: 5%;
 				width: 68%;
@@ -171,6 +319,7 @@
 				label{
 					font-size: 16px;
 					line-height: 25px;
+					white-space: nowrap;
 				}
 
 				label,
@@ -180,7 +329,7 @@
 
 			}
 
-			input[type="button"]{
+			button{
 				.btn(@dark-orange);
 				position: relative;
 				width: 78%;
@@ -253,8 +402,30 @@
 
 			.form-group{
 				padding-right: 0px;
-				padding-left: 50px;
+				//padding-left: 50px;
 				width: 78%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.form-footer{
+				font-size: 15px;
+				line-height: 20px;
+				margin-top: 53px;
+				width: 75%;
+				margin-left: 26%;
+				position: relative;
+
+				&::before{
+					content: '-3%';
+					position: absolute;
+					left: -36%;
+					font-size: 28px;
+					padding-right: 10px;
+					line-height: 51px;
+					color: @dark-orange;
+				}
 			}
 		}
 	}
@@ -350,5 +521,27 @@
 			}
 		}
 		}
+	}
+
+	@media(min-width: 1700px){
+	&__right{
+		form{
+			background: #ffffff;
+			border-radius: 15px;
+			padding: 30px 38px;
+			position: relative;
+
+				&::after{
+					content: '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 16%;
+					overflow: hidden;
+					white-space: nowrap;
+					opacity: 0.25;
+				}
+			}
+		}		
 	}
 }

@@ -43,40 +43,55 @@
 	}
 	&__string{
 		background: white;
+		padding: 5px 5%;
 		width: 100%;
-		height: 45px;
-		position: absolute;
-		top: 60%;
+		height: 46px;
+		position: fixed;
 		left: 0;
 		right: 0;
-		z-index: 1;
-		opacity: 0.8;
+		bottom: 0;
+		z-index: 999;
+		opacity: 0.7;
 		display: flex;
 		align-items: center;
 		.string-left{
-			flex-grow: 1;
+			flex-basis: 50%;
+			white-space: nowrap;
+
+			@media(min-width: 1040px){
+				letter-spacing: 1px;
+			}
 		}
-		.string-right,
-		.string-right2{
+		.right{
+			flex-basis: 50%;
 			display: flex;
-			position: relative;
+			margin-left: 15%;
+			justify-content: space-between;
+			.string-right,
+			.string-right2{
+				display: flex;
+				flex-basis: 250px;
 
-			img{
-				max-width: 20%;
-				margin-right: 10px;
-			}
+				img{
+					display: block;
+					margin-right: 10px;
+				}
 
-			& span{
-				margin-top: 8px;
-				margin-bottom: 8px;
-				white-space: nowrap;
+				& span{
+					margin-top: 8px;
+					margin-bottom: 8px;
+				}
 			}
-		}
+		}	
 		.string-right{
-			right: 10%;
+			img{
+					max-width: 17%;
+				}
 		}
 		.string-right2{
-			right: 4%;
+			img{
+					max-width: 15%;
+				}
 		}
 		&:hover{
 			background: lighten(@dark-orange, 43%);
@@ -104,11 +119,39 @@
 		margin: 0 auto 24px;
 	}
 }	
-.section-project__string{
-	display: none;
-}	
+	
 .section-project__img{
 	display: none;
+}
+.section-project__string{
+	padding-left: 11px !important;
+	padding-right: 11px !important;
+	.right{
+		font-size: 15px;
+		flex-basis: 100%;
+		margin-left: 0;
+		display: flex;
+		justify-content: space-evenly;
+
+	}
+	.string-left{
+		display: none;
+	}
+	.string-right,
+	.string-right2{
+		flex-basis: 200px;
+		img{	
+				max-width: 17%;
+				margin-right: 6px;
+			}
+	}
+	.string-right{
+		margin-right: 3%;
+		img{	
+				max-width: 19%;
+			}
+	}
+
 }
 .section-project__text{
 	h2{

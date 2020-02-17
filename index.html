@@ -71,19 +71,71 @@
 	</div>
 
 	<div class="container section-one__right">
-		<form action="#">
+		<form id="block-1-form" action="#">
 			<h2 class="form-title">Рассчитать стоимость ремонта онлайн</h2>
-			<p class="step">Шаг 1 из 5</p>
-			<h4 class="house-type">Выберите тип вашего дома</h4>
-			<div class="form-group">
-				<input type="radio" name="house-type" id="novo" value="Новостройка">
-				<label for="novo">Новостройка</label><br>
-				<input type="radio" name="house-type" id="secondary_house" value="Вторичное_жилье">
-				<label for="secondary_house">Вторичное жилье</label><br>
-				<input type="radio" name="house-type" id="village" value="Загородный_дом">
-				<label for="village">Загородный дом</label><br>
+			<p class="step" id="step">Шаг 1 из 5</p>
+			<h4 class="house-type" id="house-type">Выберите тип вашего дома
+			</h4>
+			<div class="hidden-form">
+				<div class="hidden-form__square">
+					<div>Площадь</div>
+					<input type="text" placeholder="м²">
+				</div>
+				<div class="hidden-form__rooms">
+					<div>Комнаты</div>
+					<div class="rooms-num">
+						<div class="rooms-num__item"><span class="accent-dark">1</span></div>
+						<div class="rooms-num__item">2</div>
+						<div class="rooms-num__item">3</div>
+						<div class="rooms-num__item">4+</div>
+					</div> 
+				</div>
+				<div class="hidden-form__height">
+					<div>Высота потолков, м</div>
+					<div class="roof-height">
+						<div class="roof-height__item"><span class="accent-dark">2.5</span></div>
+						<div class="roof-height__item">2.7</div>
+						<div class="roof-height__item">3</div>
+						<div class="roof-height__item">3.5</div>
+					</div>
+				</div>
 			</div>
-			<input type="button" class="btn btn-block" value="Далее">
+			<div class="hidden-result">
+				<div class="work-price">
+	        		<div class="work-price__text">
+	        			Стоимость работ
+	        		</div>
+	        		<div class="work-price__price">
+	        			313 456 &#8381;
+	        		</div>
+	        	</div>
+	        	<div class="black-material-price">
+	        		<div class="black-material-price__text">
+	        			Стоимость черновых материалов
+	        		</div>
+	        		<div class="black-material-price__price">
+	        			90 000 &#8381;
+	        		</div>
+	        	</div>
+	        	<div class="hidden-result__total">
+	        		<p>Итого:</p>
+	        		<div class="total">
+	        			403 456 &#8381;
+	        		</div>
+	        	</div>
+			</div>
+			<div class="form-group" id="block-1-form-group">
+				<label>
+					<input type="radio" name="house-type" id="novo" value="Новостройка">Новостройка
+				</label><br>
+				<label>
+					<input type="radio" name="house-type" id="secondary_house" value="Вторичное_жилье">Вторичное жилье
+				</label><br>
+				<label>
+					<input type="radio" name="house-type" id="village" value="Загородный_дом">Загородный дом
+				</label><br>
+			</div>
+			<button id="block-1-btn" class="btn btn-block" name="dalee" value="dalee">Далее</button>
 			<p class="form-footer">
 				Рассчитайте стоимость ремонта и получите в подарок скидку на отделочные работы
 			</p>
@@ -94,10 +146,12 @@
 
 <!-- section-project -->
 <section class="container-fluid section-outer section-project">
-	<div class="section-project__string px-5 py-1">
+	<div class="section-project__string">
 				<div class="string-left"><span class="accent-dark">Оставьте заявку</span>  или позвоните <span class="accent-dark">+7(499) 588-92-78</span></div>
-				<div class="string-right"><img src="img/online.svg" alt=""><span class="accent-dark">Чат с консультантом</span></div>
-				<div class="string-right2"><img src="img/project-calc.svg" alt=""><span class="accent-dark">Калькулятор ремонта</span></div>
+				<div class="right">
+					<div class="string-right"><img src="img/online.svg" alt=""><span class="accent-dark">Чат с консультантом</span></div>
+					<div class="string-right2"><img src="img/project-calc.svg" alt=""><span class="accent-dark">Калькулятор ремонта</span></div>
+				</div>
 	</div> 
 	<div class="section-inner">
 		<div class="section-project__text">
@@ -996,7 +1050,27 @@ function show(ans) {
 	}
 
   </script>
+  <script>
+  	$(function(){
+  		$('#block-1-btn').on('click', function(){
+  			$(this).attr('id', 'Dalee2');
+  			$('#step').html('Шаг 5 из 5');
+  			$('#house-type').html('Параметры помещения').css('text-align', 'left');
+  			$('#block-1-form-group').css('display', 'none');
+  			$('.hidden-form').css('display', 'flex');
 
+  				$('#Dalee2').on('click', function(){
+  					$('#step').html('Результат').css('text-align', 'left');
+  					$('#house-type').css('display', 'none');
+  					$('.hidden-form').css('display', 'none');	
+  					$('.hidden-result').css('display', 'flex');	
+  					$(this).html('Вызвать замерщика').attr('type', 'submit');
+  				});
+  		});
+
+  	});
+
+  </script>
 
 </body>
 </html>
