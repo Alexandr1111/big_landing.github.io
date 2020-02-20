@@ -41,7 +41,7 @@
 			<div class="nav__item"><p>+7(499) 588-92-78</p><span class="text-grey">с 9:00 до 21:00 без выходных</span></div>
 		</nav>	
 	</header>
-<!-- <main> -->
+<main>
 
 <!-- section-one -->
 <section class="container-fluid section-outer section-one">
@@ -196,7 +196,7 @@
 				<li><span>Инженерные коммуникации</span></li>
 				<li><span>Финишные покрытия</span></li>
 			</ul>
-			<button class="btn btn-block smeta mt-3">Получить смету бесплатно</button>
+			<button class="btn btn-block smeta mt-3" id="open-request-form">Получить смету бесплатно</button>
 		</div>
 	</div>
 	<div class="section-three__repairs mt-2">
@@ -207,6 +207,23 @@
 			<li>Элитный ремонт</li>
 			<li>Проектирование и дизайн</li>
 		</ul>
+	</div>
+	<div class="section-three__request-form" id="request-form">
+		<form action="#" id="feedback-form-send">
+			<div id="close-request-form">X</div>
+			<div class="title">
+				Отправление заявки
+			</div>
+			<input type="text" id="name-send" placeholder="Имя" required>
+			<input type="email" placeholder="Email" required>
+			<input type="tel" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" id="tel-send" placeholder="+7 (000) 000-00-00" required>
+			<div class="checkbox-group">
+				<input type="checkbox" id="is-agree" name="is-agree" required><label for="is-agree">Настоящим подтверждаю, что я ознакомлен  и согласен с политикой конфиденциальности, а также даю согласие на обработку своих персональных данных</label>
+			</div>
+			<button id="section__three-hidden-btn" type="submit" value="Отправить заявку">
+				Отправить заявку
+			</button>
+		</form>
 	</div>
 </div>
 <!-- / section-three -->
@@ -1069,7 +1086,24 @@ function show(ans) {
   		});
 
   	});
+  	$(function(){
+  		$('input#name-send, input#tel-send').blur( function(){
+        	var id = $(this).attr('id');
+        	var val = $(this).val();
+        	reg_test(id,val);
+		});
+  	});
 
+  	$(function(){
+  		$('#open-request-form').click(function(){
+  			$('#request-form').css('display', 'flex');
+  			$('not(#request-form)').css('opacity', '0.3');
+  			});
+  		$('#close-request-form').click(function(){
+  			$('#request-form').css('display', 'none');
+  			$('body').css('opacity', '1');
+  		});
+  	});
   </script>
 
 </body>
