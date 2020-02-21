@@ -3,7 +3,8 @@
 .section-three{
 	background: @bg-secondary;
 	color: @special-black;
-	min-height: 730px;
+	min-height: 780px;
+	padding-bottom: 30px;
 
 	.slider-and-desc{
 		width: 55%;
@@ -154,16 +155,19 @@
 
 	&__request-form{
 
+	form{}
+
 		#close-request-form{
 			cursor: pointer;
-			font-size: 35px;
+			font-family: Roboto;
+			font-size: 40px;
 			position: absolute;
-			right: -30px;
-			top: -30px;
+			right: -33px;
+			top: -33px;
 		}
 		
 		position: relative;
-		margin: 30px auto 0;
+		margin: 35px auto;
 		.unvisable-form();
 		display: none;
 		width: 360px;
@@ -179,6 +183,7 @@
 			margin-bottom: 50px;
 			text-align: center;
 		}
+
 		input[type="text"],
 		input[type="tel"],
 		input[type="email"]{
@@ -196,6 +201,7 @@
 				color: #D6D9D9;
 				font-family: Roboto;
 			}
+			
 		}
 		.checkbox-group{
 			display: flex;
@@ -223,8 +229,7 @@
 			outline: none;
 			border: none;
 		} 
-}
-
+	}
 }	
 @media screen and(max-width: @xs-max){
 	.section-three{
@@ -247,7 +252,7 @@
 			position: static;
 		}
 		&__request-form{
-			display: none;
+			
 		}
 		.slider-and-desc{
 
