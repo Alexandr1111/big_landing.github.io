@@ -154,23 +154,110 @@
 	}
 
 	&__request-form{
+		position: relative;
+		display: none;
+	form{
+		box-sizing: border-box;
+		max-width: 450px;
 
-	form{}
+		div {
+   			position: relative;
+   			//background: #ffffff;
+    		//border-bottom: 1px solid #ccc;
+    
+    	// Заместо плейсхолдера
+     	label {
+     		opacity: 0.3;
+      		font-weight: bold;
+      		position: absolute;
+      		top: -2px;
+      		left: 10px;
+    	}
+    
+     	input[type="text"],
+     	input[type="email"],
+     	input[type="tel"] {
+      		width: 100%;
+     		border: 0;
+      		//padding: 20px 20px 20px 50px;
+
+      		display: block;
+			padding: 0 7px;
+			outline: none;
+			border-bottom: 1px solid #D6D9D9;
+			margin-bottom: 30px;
+      
+      	&:focus {
+        
+        // removing default focus style
+        	outline: 0;
+        // adding new one
+        	background: #ffffff;
+        
+        	& + label {
+         		opacity: 0;
+        	}
+      }
+
+      &:valid {
+        //background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+        //background-size: 20px;
+        border-bottom: 1px solid green;
+        //background-repeat: no-repeat;
+        //background-position: 20px 20px;
+
+        	& + label {
+          		opacity: 0;
+        	}
+      }
+      
+      &:invalid:not(:focus):not(:placeholder-shown) {
+      		border-bottom: 1px solid red;
+        	& + label {
+         		opacity: 0;
+        	}
+      }
+      
+      &:invalid:focus:not(:placeholder-shown) {
+        & ~ .requirements {
+          max-height: 200px;
+          padding: 0 30px 20px 50px;
+        }
+      }
+      
+    }
+    
+    .requirements {
+    	padding: 0 30px 0 50px;
+    	color: #999;
+    	max-height: 0;
+    	transition: 0.28s;
+    	overflow: hidden;
+    	color: red;
+    	font-style: italic;
+    }
+    
+  }
+	}
 
 		#close-request-form{
 			cursor: pointer;
-			font-family: Roboto;
-			font-size: 40px;
 			position: absolute;
-			right: -33px;
-			top: -33px;
+			right: -40px;
+			top: -38px;
+			
+			img{
+				opacity: .65;
+
+				&:hover{
+					opacity: 1;
+				}
+			}
 		}
-		
-		position: relative;
-		margin: 35px auto;
 		.unvisable-form();
-		display: none;
+		margin: 35px auto;
 		width: 360px;
+		//display: flex;
 		flex-direction: column;
 		padding: 32px;
 
@@ -184,6 +271,68 @@
 			text-align: center;
 		}
 
+		.checkbox-group{
+			display: flex;
+			margin-bottom: 25px;
+		
+			input[type="checkbox"]{
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			label{
+				cursor: pointer;
+				font-family: Roboto;
+				font-size: 12px;
+				line-height: 16px;
+				color: #121212;
+				opacity: 1;
+				position: static;
+			}
+		}
+		button{
+			/* background: rgba(236, 238, 240, 0.6);
+			padding: 8px 20px;
+			//color: #ffffff;
+			border-radius: 40px;
+			width: 85%;
+			display: block;
+			margin: 0 auto;
+			outline: none;
+			border: none; */
+		}
+		.inactive{
+			border-radius: 40px;
+			width: 85%;
+			display: block;
+			margin: 0 auto;
+			outline: none;
+			border: none;
+			background: rgba(236, 238, 240, 0.6);
+			padding: 8px 20px;
+		}
+		.active{
+			.btn(@dark-orange);
+		}
+		
+		//display: none;
+		/* position: relative;
+		margin: 35px auto;
+		.unvisable-form();
+		display: none;
+		width: 360px;
+		flex-direction: column;
+		padding: 32px;
+		
+		.title{
+			color: @special-black;
+			font-weight: bold;
+			font-size: 24px;
+			line-height: 32px;
+			font-family: Roboto;
+			margin-bottom: 50px;
+			text-align: center;
+		}
+		
 		input[type="text"],
 		input[type="tel"],
 		input[type="email"]{
@@ -194,19 +343,11 @@
 			border-bottom: 1px solid #D6D9D9;
 			margin-bottom: 30px;
 			width: 100%;
-
-			&::placeholder{
-				line-height: 19px;
-				font-size: 15px;
-				color: #D6D9D9;
-				font-family: Roboto;
-			}
-			
 		}
 		.checkbox-group{
 			display: flex;
 			margin-bottom: 25px;
-
+		
 			input[type="checkbox"]{
 				margin-right: 10px;
 				cursor: pointer;
@@ -228,7 +369,7 @@
 			margin: 0 auto;
 			outline: none;
 			border: none;
-		} 
+		}  */
 	}
 }	
 @media screen and(max-width: @xs-max){

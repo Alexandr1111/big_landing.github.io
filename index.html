@@ -56,7 +56,7 @@
 			</p>
 			<form role="form" class="row">
 				<input type="text" name="name" placeholder="Имя">
-				<input type="tel" name="tel" placeholder="Телефон">
+				<input type="tel" name="tel" id="block-1-tel" placeholder="Телефон">
 				<input type="submit" class="btn" name="send_data" value="Оставить заявку">
 				<div class="form-group">
 					<input type="checkbox" checked name="is-client-agree" id="is-client-agree">
@@ -210,17 +210,35 @@
 	</div>
 	<div class="section-three__request-form" id="request-form">
 		<form action="#" id="feedback-form-send">
-			<div id="close-request-form">X</div>
-			<div class="title">
-				Отправление заявки
+			<div id="close-request-form">
+				<img src="img/lol.svg" width="35" height="35" alt="cancel" title="Закрыть">
 			</div>
-			<input type="text" id="name-send" autofocus="on" placeholder="Имя" required>
-			<input type="email" placeholder="Email" autocomplete="on" required>
-			<input type="tel" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" id="tel-send" placeholder="+7 (000) 000-00-00" required>
+			<p class="title">
+				Отправление заявки
+			</p>
+
+			<div>
+				<input type="text" id="name-send" name="name-send" placeholder=" " required onkeyup='checkParams()'>
+				<label for="name-send">Имя</label>
+			</div>
+	
+			<div>
+				<input type="email" placeholder=" " id="email-send" name="email-send" autocomplete="on" required onkeyup='checkParams()'>
+				<label for="email-send">Email</label>
+				<div class="requirements">
+      				Введите правильно email адрес.
+    			</div>
+			</div>
+
+			<div>
+				<input type="tel" name="tel-send" id="tel-send" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"placeholder=" " required onkeyup='checkParams()'>
+				<label for="tel-send">+7 (000) 000-00-00</label>
+			</div>
+
 			<div class="checkbox-group">
 				<input type="checkbox" id="is-agree" name="is-agree" required><label for="is-agree">Настоящим подтверждаю, что я ознакомлен  и согласен с политикой конфиденциальности, а также даю согласие на обработку своих персональных данных</label>
 			</div>
-			<button id="section__three-hidden-btn" type="submit" value="Отправить заявку">
+			<button class = "inactive" id="section__three-hidden-btn" type="submit" value="Отправить заявку">
 				Отправить заявку
 			</button>
 		</form>
@@ -589,7 +607,7 @@
 				</div>
 
 				<div class="search-conteiner my-search-conteiner">
-	          		<input type="tel" id="tel-send" name="request_tel" placeholder="+7 (999) 999 99 99">
+	          		<input type="tel" id="request-tel" name="request_tel" placeholder="+7 (999) 999 99 99">
 	          		<div class="label-box">
 	            	<label>Ваш номер телефона</label>
 	          		</div>
@@ -710,7 +728,7 @@
 				</div>
 
 				<div class="search-conteiner my-search-conteiner">
-	          		<input type="tel" id="tel-send" name="request_tel" placeholder="+7 (999) 999 99 99">
+	          		<input type="tel" id="request-tel2" name="request_tel" placeholder="+7 (999) 999 99 99">
 	          		<div class="label-box">
 	            	<label>Ваш номер телефона</label>
 	          		</div>
@@ -845,7 +863,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="./digitalBush-jquery.maskedinput-9672630/dist/jquery.maskedinput.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
 
     <script>
     'use strict';
@@ -1072,10 +1089,6 @@ function show(ans) {
   </script>
   <script>
 
-$(function(){
-	$('#feedback-form-send').validate();
-});
-
   	$(function(){
   		$('#block-1-btn').on('click', function(){
   			$(this).attr('id', 'Dalee2');
@@ -1094,13 +1107,6 @@ $(function(){
   		});
 
   	});
-  	$(function(){
-  		$('input#name-send, input#tel-send').blur( function(){
-        	var id = $(this).attr('id');
-        	var val = $(this).val();
-        	reg_test(id,val);
-		});
-  	});
 
   	$(function(){
   		$('#open-request-form').click(function(){
@@ -1113,11 +1119,30 @@ $(function(){
   		});
   	});
 
-var phone = document.querySelectorAll("#tel-send");
+	var phone = $("#tel-send");
+	var block1tel = $("#block-1-tel");
+	var requesttel = $("#request-tel");
+	var requesttel2 = $("#request-tel2");
 	$(function(){
 		$(phone).mask("+7 (999) 999-99-99");
+		$(block1tel).mask("+7 (999) 999-99-99");
+		$(requesttel).mask("+7 (999) 999-99-99");
+		$(requesttel2).mask("+7 (999) 999-99-99");
 	});
 
+	function checkParams() {
+    var fio = $('#name-send').val();
+    var email = $('#email-send').val();
+    var phone = $('#tel-send').val();
+    
+    if(fio.length != 0 && email.length >= 5 && phone.length != 0) {
+      $('#section__three-hidden-btn').addClass('active');
+    } else {
+      $('#section__three-hidden-btn').removeClass('active');
+    }
+}
+
   </script>
+  
 </body>
 </html>
