@@ -2,7 +2,8 @@ var gulp=require('gulp');
 var rename=require('gulp-rename');
 var less=require('gulp-less');
 var cssmin=require('gulp-cssmin');
-var autoprefixer = require('gulp-autoprefixer');
+var imagemin = require('gulp-imagemin');
+var autoprefixer=require('gulp-autoprefixer');
 var browser_sync=require('browser-sync').create();
 
 
@@ -19,6 +20,13 @@ gulp.src('./less_styles/**/*')	//Что берем(все папки и файл
 	.pipe(gulp.dest('./css_styles/'))	//Куда помещаем
 	.pipe(browser_sync.stream())		    
 done();
+}
+
+function compress_img(done){
+gulp.src('img/*')
+	.pipe(imagemin())
+	.pipe(gulp.dest('img/'));
+done();	
 }
 
 function sync(done){
@@ -44,3 +52,5 @@ done();
 }
 
 gulp.task('default', gulp.parallel(min_css_from_less, sync, watch_files));
+//При добавлении картинок пишем 'gulp compress_img' в консоли
+gulp.task(compress_img);
