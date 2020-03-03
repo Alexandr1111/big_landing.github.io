@@ -153,9 +153,31 @@
 		}
 	}
 
-	&__request-form{
-		position: relative;
+	.popup-fade {
 		display: none;
+	}
+	.popup-fade:before {
+		content: '';
+		background: #000;
+		position: fixed; 
+		left: 0;
+		top: 0;
+		width: 100%; 
+		height: 100%;
+		opacity: 0.7;
+		z-index: 9999;
+	}
+
+	&__request-form{
+		//position: relative;
+		display: none;
+		position: fixed;
+    	top: 12%;
+    	left: 50%;
+    	margin-left: -200px !important;
+    	z-index: 99999;
+		opacity: 1;
+
 	form{
 		box-sizing: border-box;
 		max-width: 450px;
@@ -418,6 +440,3 @@
 		}
 	}
 }
-/* @media (min-width: 0) and (max-width: 350px){
-		box-sizing: content-box !important;
-} */

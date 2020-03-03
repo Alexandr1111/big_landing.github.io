@@ -196,7 +196,7 @@
 				<li><span>Инженерные коммуникации</span></li>
 				<li><span>Финишные покрытия</span></li>
 			</ul>
-			<button class="btn btn-block smeta mt-3" id="open-request-form">Получить смету бесплатно</button>
+			<button class="btn btn-block smeta mt-3 popup-open" id="open-request-form">Получить смету бесплатно</button>
 		</div>
 	</div>
 	<div class="section-three__repairs mt-2">
@@ -208,6 +208,7 @@
 			<li>Проектирование и дизайн</li>
 		</ul>
 	</div>
+	<div class="popup-fade">
 	<div class="section-three__request-form" id="request-form">
 		<form action="#" id="feedback-form-send">
 			<div id="close-request-form">
@@ -242,6 +243,7 @@
 				Отправить заявку
 			</button>
 		</form>
+	</div>
 	</div>
 </div>
 <!-- / section-three -->
@@ -1093,16 +1095,34 @@
   	answer_is_empty('#drop-arrow4', '#answer4');
   	answer_is_empty('#drop-arrow5', '#answer5');
 
-  	$(function(){
-  		$('#open-request-form').click(function(){
-  			$('#request-form').css('display', 'flex');
-  			$('not(#request-form)').css('opacity', '0.3');
-  			});
-  		$('#close-request-form').click(function(){
-  			$('#request-form').css('display', 'none');
-  			$('body').css('opacity', '1');
-  		});
+  	$(document).ready(function($) {
+	$('.popup-open').click(function() {
+		$('.popup-fade').fadeIn(340);
+		$('#request-form').fadeIn(510);
+		return false;
+	});	
+			
+	$('#close-request-form').click(function(){
+  		$('#request-form').fadeOut(510);
+  		$('.popup-fade').fadeOut(340);
   	});
+
+ 	// Закрытие по клавише Esc.
+	$(document).keydown(function(e) {
+		if (e.keyCode === 27) {
+			e.stopPropagation();
+			$('#request-form').fadeOut(510);
+			$('.popup-fade').fadeOut(340);
+		}
+	});
+
+	// Клик по фону, но не по окну.
+	$('.popup-fade').click(function(e) {
+		if ($(e.target).closest('#request-form').length == 0) {
+			$(this).fadeOut(340);//Если клик не по request-form и его дочерним элементам 					
+		}
+	});
+});
 
 	var phone = $("#tel-send");
 	var block1tel = $("#block-1-tel");
